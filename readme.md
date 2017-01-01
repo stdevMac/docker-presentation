@@ -9,12 +9,12 @@
 ###### [The CubanTech Group](http://cuban.tech) / [@TheCubanTech](http://twitter.com/TheCubanTech)
 ________________________
 
-## Acknowlegements
+#### Acknowlegements
 
-#### Based on slides for presentation in [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
+##### Based on slides for presentation in [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
 
 ###### [TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](http://twitter.com/theoploumis)
-________________________
+___
 
 ###### Get them: [online presentation](http://cubantech.github.io/docker-presentation/) / [source code](https://github.com/cubantech/docker-presentation) / [docker image](https://hub.docker.com/r/tplcom/docker-presentation/)
 
