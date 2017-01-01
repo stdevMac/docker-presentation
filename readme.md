@@ -7,7 +7,7 @@
 
 ###### [Olemis Lang](http://www.linkedin.com/in/olemis) / [@olemislc](http://twitter.com/olemislc)
 ###### [The CubanTech Group](http://cuban.tech) / [@TheCubanTech](http://twitter.com/TheCubanTech)
-________________________
+___
 
 ## Acknowlegements
 
