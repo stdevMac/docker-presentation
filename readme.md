@@ -14,7 +14,8 @@ ________________________
 ###### Under [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
 
 ___
-## Acknowledgements
+
+### Acknowledgements
 
 ###### Based on slides for presentation in [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
 
