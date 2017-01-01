@@ -7,18 +7,18 @@
 
 ###### [Olemis Lang](http://www.linkedin.com/in/olemis) / [@olemislc](http://twitter.com/olemislc)
 ###### [The CubanTech Group](http://cuban.tech) / [@TheCubanTech](http://twitter.com/TheCubanTech)
-___
-## Acknowledgements
-
-###### Based on slides for presentation in [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
-
-###### [TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](http://twitter.com/theoploumis)
 ________________________
 
 ###### Get them: [online presentation](http://cubantech.github.io/docker-presentation/) / [source code](https://github.com/cubantech/docker-presentation) / [docker image](https://hub.docker.com/r/tplcom/docker-presentation/)
 
 ###### Under [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
 
+___
+## Acknowledgements
+
+###### Based on slides for presentation in [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
+
+###### [TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](http://twitter.com/theoploumis)
 ---
 
 ### Let me ask you
