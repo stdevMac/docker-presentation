@@ -1,4 +1,4 @@
-![Docker logo](https://raw.githubusercontent.com/cubantech/docker-presentation/gh-pages/img/docker_logo.png)
+![Docker logo](img/docker_logo.png)
 
 ## Docker for Developers - Introduction
 
@@ -9,7 +9,7 @@
 ###### [The CubanTech Group](http://cuban.tech) / [@TheCubanTech](http://twitter.com/TheCubanTech)
 ________________________
 
-###### Get them: [online presentation](http://cubantech.github.io/docker-presentation/) / [source code](https://github.com/cubantech/docker-presentation) / [docker image](https://hub.docker.com/r/tplcom/docker-presentation/)
+###### Get them: [online presentation](http://cubantech.github.io/docker-presentation/) / [source code](http://github.com/cubantech/docker-presentation) / [docker image](http://hub.docker.com/r/tplcom/docker-presentation/)
 
 ###### Under [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
 
@@ -42,20 +42,20 @@ ________________________
 
 ### Docker vs VMs
 
-![Docker vs traditional Virtualization](https://insights.sei.cmu.edu/assets/content/VM-Diagram.png)
+![Docker vs traditional Virtualization](img/VM-Diagram.png)
 
 ---
 
 ### Docker History
 
- - Solomon Hykes ([@solomonstre](https://twitter.com/solomonstre))
+ - Solomon Hykes ([@solomonstre](http://twitter.com/solomonstre))
  - dotCloud (now Docker Inc)
  - March 2013
  - Apache 2.0 license
  - 30k stars on Github
  - 260k public repositories on hub.docker.com
  - Docker Inc acquires everyone <small><sup>TM</sup></small>
- - Docker joins the "[Open Container Initiative](https://www.opencontainers.org/)", June 2015
+ - Docker joins the "[Open Container Initiative](http://www.opencontainers.org/)", June 2015
 
 ---
 
@@ -83,28 +83,28 @@ ________________________
  - Multi-tier applications
  - PaaS, SaaS
 
-###### See the [survey results for 2016](https://www.docker.com/survey-2016)
+###### See the [survey results for 2016](http://www.docker.com/survey-2016)
 
 ---
 
 ### Technology behind Docker
 
- - Linux [x86-64](https://www.wikiwand.com/en/X86-64)
- - [Go](https://golang.org/) language
- - [Client - Server](https://www.wikiwand.com/en/Client%E2%80%93server_model) (deamon) architecture
- - Union file systems ([UnionFS](https://www.wikiwand.com/en/UnionFS): AUFS, btrfs, vfs etc)
- - [Namespaces](https://en.wikipedia.org/wiki/Cgroups#NAMESPACE-ISOLATION) (pid, net, ipc, mnt, uts)
- - Control Groups ([cgroups](https://www.wikiwand.com/en/Cgroups))
- - Container format ([libcontainer](https://github.com/opencontainers/runc/tree/master/libcontainer "Libcontainer provides a native Go implementation for creating containers with namespaces, cgroups, capabilities, and filesystem access controls. It allows you to manage the lifecycle of the container performing additional operations after the container is created."))
+ - Linux [x86-64](http://www.wikiwand.com/en/X86-64)
+ - [Go](http://golang.org/) language
+ - [Client - Server](http://www.wikiwand.com/en/Client%E2%80%93server_model) (deamon) architecture
+ - Union file systems ([UnionFS](http://www.wikiwand.com/en/UnionFS): AUFS, btrfs, vfs etc)
+ - [Namespaces](http://en.wikipedia.org/wiki/Cgroups#NAMESPACE-ISOLATION) (pid, net, ipc, mnt, uts)
+ - Control Groups ([cgroups](http://www.wikiwand.com/en/Cgroups))
+ - Container format ([libcontainer](http://github.com/opencontainers/runc/tree/master/libcontainer "Libcontainer provides a native Go implementation for creating containers with namespaces, cgroups, capabilities, and filesystem access controls. It allows you to manage the lifecycle of the container performing additional operations after the container is created."))
 
-###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
+###### See more at [Understanding docker](http://docs.docker.com/engine/understanding-docker/)
 
 ---
 
 ### The Docker architecture
 
-![Docker architecture](https://docs.docker.com/engine/article-img/architecture.svg)
-###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
+![Docker architecture](img/architecture.svg)
+###### See more at [Understanding docker](http://docs.docker.com/engine/understanding-docker/)
 
 ---
 
@@ -142,7 +142,7 @@ A Client with a Daemon as also as the docker-compose tool. Usually referred simp
 
 ### Docker machine
 
-![Docker machine logo](https://raw.githubusercontent.com/cubantech/docker-presentation/gh-pages/img/docker_machine.png)
+![Docker machine logo](img/docker_machine.png)
 
 A tool which makes it really easy to create Docker hosts on your computer,
 on cloud providers and inside your own data center.
@@ -153,7 +153,7 @@ Required for Mac, Windows users.
 
 ### Docker compose
 
-![Docker compose logo](https://raw.githubusercontent.com/cubantech/docker-presentation/gh-pages/img/docker_compose.png)
+![Docker compose logo](img/docker_compose.png)
 
 A tool for defining and running complex applications with Docker
 (eg a multi-container application) with a single file.
@@ -162,7 +162,7 @@ A tool for defining and running complex applications with Docker
 
 ### Docker swarm
 
-![Docker swarm logo](https://raw.githubusercontent.com/cubantech/docker-presentation/gh-pages/img/docker_swarm.png)
+![Docker swarm logo](img/docker_swarm.png)
 
 A native clustering tool for Docker. Swarm pools together several Docker
 hosts and exposes them as a single virtual Docker host. It scale up to multiple hosts.
@@ -171,7 +171,7 @@ hosts and exposes them as a single virtual Docker host. It scale up to multiple 
 
 ### Docker distribution
 
-![Docker distribution logo](https://raw.githubusercontent.com/cubantech/docker-presentation/gh-pages/img/docker_distribution.png)
+![Docker distribution logo](img/docker_distribution.png)
 
 A (hosted) service containing repositories of images which responds to the Registry API.
 
@@ -183,11 +183,11 @@ A (hosted) service containing repositories of images which responds to the Regis
 docker run -i -t -d ubuntu:15.04 /bin/bash
 ```
 
- - Pulls the ubuntu:15.04 [image](https://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](https://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
- - Creates a new [container](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/ "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.")
- - Allocates a filesystem and mounts a read-write [layer](https://docs.docker.com/engine/reference/glossary/#filesystem "A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.")
- - Allocates a [network/bridge interface](https://www.wikiwand.com/en/Bridging_%28networking%29 "")
- - Sets up an [IP address](https://www.wikiwand.com/en/IP_address "An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.")
+ - Pulls the ubuntu:15.04 [image](http://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](http://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
+ - Creates a new [container](http://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/ "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.")
+ - Allocates a filesystem and mounts a read-write [layer](http://docs.docker.com/engine/reference/glossary/#filesystem "A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.")
+ - Allocates a [network/bridge interface](http://www.wikiwand.com/en/Bridging_%28networking%29 "")
+ - Sets up an [IP address](http://www.wikiwand.com/en/IP_address "An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.")
  - Executes a process that you specify (``` /bin/bash ```)
  - Captures and provides application output
 
@@ -195,13 +195,13 @@ docker run -i -t -d ubuntu:15.04 /bin/bash
 
 ### The docker image
 
-![ubuntu:15.04 image](https://docs.docker.com/engine/userguide/storagedriver/images/image-layers.jpg "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot. Each Docker image references a list of read-only layers that represent filesystem differences. Layers are stacked on top of each other to form a base for a container’s root filesystem.")
+![ubuntu:15.04 image](img/image-layers.jpg "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot. Each Docker image references a list of read-only layers that represent filesystem differences. Layers are stacked on top of each other to form a base for a container’s root filesystem.")
 
 ---
 
 ### The docker container
 
-![container using ubuntu:15.04 image](https://docs.docker.com/engine/userguide/storagedriver/images/container-layers.jpg "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides. For each containers there is a new, thin, writable layer - container layer - on top of the underlying stack (image).")
+![container using ubuntu:15.04 image](img/container-layers.jpg "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides. For each containers there is a new, thin, writable layer - container layer - on top of the underlying stack (image).")
 
 ---
 
@@ -209,9 +209,9 @@ docker run -i -t -d ubuntu:15.04 /bin/bash
 
 > A Dockerfile is a text document that contains all the commands a user could call on the command line to create an image.
 
- - [Dockerfile with inline comments](https://github.com/cubantech/docker-presentation/blob/gh-pages/examples/dockerfile/Dockerfile) just for education
- - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) on docker docs
- - Official Dockerfiles ([rails](https://github.com/docker-library/rails/blob/master/Dockerfile), [nodejs](https://github.com/ReadyTalk/nodejs-docker/blob/master/base/Dockerfile), [django](https://github.com/docker-library/django/blob/master/3.4/Dockerfile), [Drupal](https://github.com/docker-library/drupal/blob/master/8.1/fpm/Dockerfile))
+ - [Dockerfile with inline comments](http://github.com/cubantech/docker-presentation/blob/gh-pages/examples/dockerfile/Dockerfile) just for education
+ - [Dockerfile reference](http://docs.docker.com/engine/reference/builder/) on docker docs
+ - Official Dockerfiles ([rails](http://github.com/docker-library/rails/blob/master/Dockerfile), [nodejs](http://github.com/ReadyTalk/nodejs-docker/blob/master/base/Dockerfile), [django](http://github.com/docker-library/django/blob/master/3.4/Dockerfile), [Drupal](http://github.com/docker-library/drupal/blob/master/8.1/fpm/Dockerfile))
 
 ---
 
@@ -248,9 +248,9 @@ docker rm [CONTAINER]
 
 - SSH into a container
 - Build an image
-- Docker [Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
-- [Linked](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/) containers
-- Using [docker-compose](https://docs.docker.com/compose/)
+- Docker [Volume](http://docs.docker.com/engine/userguide/containers/dockervolumes/)
+- [Linked](http://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/) containers
+- Using [docker-compose](http://docs.docker.com/compose/)
 - Scale containers with docker-compose
 - Share an image (share this presentation)
 - Package an app with its environment
@@ -269,7 +269,7 @@ docker run -it --name ubuntu_example ubuntu /bin/bash
 
 ### Example: Build an Image
 
-Let's build a [jenkins image](https://github.com/komljen/dockerfile-examples/blob/master/jenkins/Dockerfile)
+Let's build a [jenkins image](http://github.com/komljen/dockerfile-examples/blob/master/jenkins/Dockerfile)
 
 ```
 cd ~/Docker-presentation
@@ -286,7 +286,7 @@ docker run -d -p 8099:8080 --name jenkins_example jenkins-local
 
 ### Example: Docker volume
 
-Let's use [Apache server](https://bitbucket.org/EdBoraas/apache-docker/src/)
+Let's use [Apache server](http://bitbucket.org/EdBoraas/apache-docker/src/)
 
 ```
 cd ~/Docker-presentation
@@ -311,7 +311,7 @@ echo "It works using mount." >> index.html
 
 ### Example: Docker link containers
 
-Let's create a [Drupal app](https://hub.docker.com/_/drupal/) (apache, php, mysql, drupal)
+Let's create a [Drupal app](http://hub.docker.com/_/drupal/) (apache, php, mysql, drupal)
 
 ```
 cd ~/Docker-presentation
@@ -347,7 +347,7 @@ docker inspect -f "{{ .HostConfig.Links }}" drupal_example
 
 ### Example: Using Docker Compose
 
-Let's create a Drupal app with [docker-compose.yml](https://github.com/cubantech/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml)
+Let's create a Drupal app with [docker-compose.yml](http://github.com/cubantech/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml)
 
 ```
 cd ~/Docker-presentation
@@ -392,7 +392,7 @@ docker run -d --name apache_example \
            nimmis/alpine-apache
 
 // Create a file inside the container.
-// See https://github.com/nimmis/docker-alpine-apache for details.
+// See http://github.com/nimmis/docker-alpine-apache for details.
 docker exec -ti apache_example \
             /bin/sh -c 'mkdir /test && echo "This is it." >> /test/test.txt'
 
@@ -428,7 +428,7 @@ docker load < myapache_image.tar
 
 ### Example: GUI with Docker
 
-See examples at [hub.docker.com/u/jess](https://hub.docker.com/u/jess/)
+See examples at [hub.docker.com/u/jess](http://hub.docker.com/u/jess/)
 
 ```
 // Before staring we should grant access to everyone on the X Server (locally)
@@ -473,15 +473,15 @@ xhost -
 
 ### Docker tips
 
-There are known best practices (see a list at [examples/tips](https://github.com/cubantech/docker-presentation/tree/gh-pages/examples/tips))
+There are known best practices (see a list at [examples/tips](http://github.com/cubantech/docker-presentation/tree/gh-pages/examples/tips))
 
-- Optimize containers (check [fromlatest.io](https://www.fromlatest.io/) and [imagelayers.io](https://imagelayers.io))
+- Optimize containers (check [fromlatest.io](http://www.fromlatest.io/) and [imagelayers.io](http://imagelayers.io))
 - Create your own tiny base
 - Containers are not Virtual Machines
 - Full stack Images VS 1 process per Container
 - Create your private registry
 - Create shortcut commands
-- Use docker-compose.yml templates (see why at [lorry.io](https://lorry.io/))
+- Use docker-compose.yml templates (see why at [lorry.io](http://lorry.io/))
 - Be aware of the hub.docker.com docker agent version
 
 ---
@@ -490,19 +490,19 @@ There are known best practices (see a list at [examples/tips](https://github.com
 
 | Type | Software |
 |:----:|----------|
-| Clustering/orchestration | [Swarm](https://docs.docker.com/swarm/), [Kubernetes](http://kubernetes.io/), [Marathon](https://mesosphere.github.io/marathon/), [MaestroNG](https://github.com/signalfx/maestro-ng), [decking](http://decking.io/), [shipyard](http://shipyard-project.com/) |
-| Docker registries | [Portus](http://port.us.org/), [Docker Distribution](https://github.com/docker/distribution), [hub.docker.com](http://hub.docker.com), [quay.io](https://quay.io), [Google container registry](https://cloud.google.com/tools/container-registry/), [Artifactory](https://www.jfrog.com/artifactory/), [projectatomic.io](http://www.projectatomic.io/) |
-| PaaS with Docker | [Rancher](http://rancher.com/), [Tsuru](https://tsuru.io/), [dokku](https://github.com/dokku/dokku), [flynn](https://flynn.io/),  [Octohost](http://octohost.io/), [DEIS](http://deis.io/) |
+| Clustering/orchestration | [Swarm](http://docs.docker.com/swarm/), [Kubernetes](http://kubernetes.io/), [Marathon](http://mesosphere.github.io/marathon/), [MaestroNG](http://github.com/signalfx/maestro-ng), [decking](http://decking.io/), [shipyard](http://shipyard-project.com/) |
+| Docker registries | [Portus](http://port.us.org/), [Docker Distribution](http://github.com/docker/distribution), [hub.docker.com](http://hub.docker.com), [quay.io](http://quay.io), [Google container registry](http://cloud.google.com/tools/container-registry/), [Artifactory](http://www.jfrog.com/artifactory/), [projectatomic.io](http://www.projectatomic.io/) |
+| PaaS with Docker | [Rancher](http://rancher.com/), [Tsuru](http://tsuru.io/), [dokku](http://github.com/dokku/dokku), [flynn](http://flynn.io/),  [Octohost](http://octohost.io/), [DEIS](http://deis.io/) |
 | OS made of Containers | [RancherOS](http://rancher.com/rancher-os/) |
 
 ---
 
 ### Docker Alternatives
 
-- [Rocket, rkt](https://github.com/coreos/rkt)
-- [Linux Containers, LXC](https://linuxcontainers.org/)
+- [Rocket, rkt](http://github.com/coreos/rkt)
+- [Linux Containers, LXC](http://linuxcontainers.org/)
 - [Linux container hypervisor, LXD](http://www.ubuntu.com/cloud/lxd)
-- [BSD Jails](https://www.freebsd.org/doc/handbook/jails.html)
+- [BSD Jails](http://www.freebsd.org/doc/handbook/jails.html)
 - [Solaris Zones](http://oracle.com/solaris)
 - [drawbridge](http://research.microsoft.com/en-us/projects/drawbridge/)
 
@@ -510,26 +510,26 @@ There are known best practices (see a list at [examples/tips](https://github.com
 
 ### Instead of Resources
 
- - [Awesome Docker](https://github.com/veggiemonk/awesome-docker) (list of Docker resources & projects)
- - [Docker cheat sheet](https://github.com/wsargent/docker-cheat-sheet)
- - [Docker in Practice](https://www.manning.com/books/docker-in-practice), [The Docker Book](http://www.dockerbook.com/) (books)
- - [Docker aliases/shortcuts](https://github.com/cubantech/docker-presentation/tree/gh-pages/examples/shortcuts/docker-aliases.sh)
- - Docker [case studies](https://www.docker.com/customers)
+ - [Awesome Docker](http://github.com/veggiemonk/awesome-docker) (list of Docker resources & projects)
+ - [Docker cheat sheet](http://github.com/wsargent/docker-cheat-sheet)
+ - [Docker in Practice](http://www.manning.com/books/docker-in-practice), [The Docker Book](http://www.dockerbook.com/) (books)
+ - [Docker aliases/shortcuts](http://github.com/cubantech/docker-presentation/tree/gh-pages/examples/shortcuts/docker-aliases.sh)
+ - Docker [case studies](http://www.docker.com/customers)
 
 ---
 
 ### Questions?
 
-![Pythons over Docker!](https://raw.githubusercontent.com/cubantech/docker-presentation/gh-pages/img/docker_logo.png)
+![Pythons over Docker!](img/docker_logo.png)
 
-[Review this presentation](https://goo.gl/lkau9t)
+[Review this presentation](http://goo.gl/lkau9t)
 
 > Next: Docker in production, Scaling, Private registries, PaaS.
 
-###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [docker 1.12.5](https://github.com/docker/docker/releases/tag/v1.12.5), [wharfee](https://github.com/j-bennet/wharfee) and [dry](https://github.com/moncho/dry).
+###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [docker 1.12.5](http://github.com/docker/docker/releases/tag/v1.12.5), [wharfee](http://github.com/j-bennet/wharfee) and [dry](http://github.com/moncho/dry).
 
 ---
 
 ### Bonus!
 
-> Get the [SKGTech.io docker image](https://github.com/skgtech/skgtech.io-docker)
+> Get the [SKGTech.io docker image](http://github.com/skgtech/skgtech.io-docker)
