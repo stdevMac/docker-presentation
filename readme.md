@@ -2,8 +2,8 @@
 
 ## Docker for Developers - Introduction
 
-#### [CubanTech Meetups](http://www.meetup.com/CubanTech), 24-25 December 2016
-#### [Docker Cuba Meetups](http://www.meetup.com/Docker-Cuba), 24 December 2016
+#### [CubanTech Meetups](http://www.meetup.com/CubanTech), 19 October 2019
+#### [Docker Cuba Meetups](http://www.meetup.com/Docker-Cuba), 19 October 2019
 
 ###### [Marcos Maceo](https://github.com/stdevMac) / [@marcosmaceo](https://t.me/marcosmaceo)
 ###### [Adrian Paez](https://github.com/stdevAdrianPaez) / [@marcosmaceo](https://t.me/Wic97)
