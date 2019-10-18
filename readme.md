@@ -181,10 +181,10 @@ A (hosted) service containing repositories of images which responds to the Regis
 ### Steps of a Docker workflow
 
 ```
-docker run -i -t -d ubuntu:15.04 /bin/bash
+docker run -i -t -d ubuntu:18.04 /bin/bash
 ```
 
- - Pulls the ubuntu:15.04 [image](http://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](http://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
+ - Pulls the ubuntu:18.04 [image](http://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](http://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
  - Creates a new [container](http://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/ "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.")
  - Allocates a filesystem and mounts a read-write [layer](http://docs.docker.com/engine/reference/glossary/#filesystem "A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.")
  - Allocates a [network/bridge interface](http://www.wikiwand.com/en/Bridging_%28networking%29 "")
