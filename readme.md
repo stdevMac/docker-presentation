@@ -181,7 +181,7 @@ A (hosted) service containing repositories of images which responds to the Regis
 ### Steps of a Docker workflow
 
 ```
-docker run -i -t -d ubuntu:18.04 /bin/bash
+docker run -i -t -d ubuntu:18.04 ls
 ```
 
  - Pulls the ubuntu:18.04 [image](http://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](http://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
