@@ -6,7 +6,7 @@
 #### [Docker Cuba Meetups](http://www.meetup.com/Docker-Cuba), 24 December 2016
 
 ###### [Marcos Maceo](https://github.com/stdevMac) / [@marcosmaceo](https://t.me/marcosmaceo)
-#######[Adrian Paez](https://github.com/stdevAdrianPaez) / [@marcosmaceo](https://t.me/Wic97)
+###### [Adrian Paez](https://github.com/stdevAdrianPaez) / [@marcosmaceo](https://t.me/Wic97)
 ###### [The CubanTech Group](http://cuban.tech) / [@TheCubanTech](http://twitter.com/TheCubanTech)
 ________________________
 
