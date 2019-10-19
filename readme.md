@@ -33,7 +33,7 @@ ________________________
 
 ---
 
-### What is Docker (v1.12.5)
+### What is Docker
 
 > Docker is an open platform for developing, shipping, and running applications.
 
@@ -351,7 +351,7 @@ docker run --name redis -d redis:alpine
 docker run -d --name flask \
 	p 5000:5000 \
 	--link redis:redis \
-	npython-flask
+	python-flask
 
 // Open http://localhost:5000
 
@@ -363,7 +363,7 @@ docker inspect -f "{{ .HostConfig.Links }}" flask
 
 ### Example: Using Docker Compose
 
-Let's create a Drupal app with [docker-compose.yml](http://github.com/cubantech/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml)
+Let's create a Flask app with [docker-compose.yml](http://github.com/cubantech/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml)
 
 ```
 cat docker-compose.yml
@@ -475,8 +475,3 @@ There are known best practices (see a list at [examples/tips](http://github.com/
 
 ###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [docker 1.12.5](http://github.com/docker/docker/releases/tag/v1.12.5), [wharfee](http://github.com/j-bennet/wharfee) and [dry](http://github.com/moncho/dry).
 
----
-
-### Bonus!
-
-> Get the [SKGTech.io docker image](http://github.com/skgtech/skgtech.io-docker)
