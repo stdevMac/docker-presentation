@@ -181,15 +181,15 @@ A (hosted) service containing repositories of images which responds to the Regis
 ### Steps of a Docker workflow
 
 ```
-docker run -i -t -d ubuntu:18.04 ls
+docker run -i -t -d python:3.7-alpine ls
 ```
 
- - Pulls the ubuntu:18.04 [image](http://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](http://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
+ - Pulls the python:3.7-alpine [image](http://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](http://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
  - Creates a new [container](http://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/ "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.")
  - Allocates a filesystem and mounts a read-write [layer](http://docs.docker.com/engine/reference/glossary/#filesystem "A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.")
  - Allocates a [network/bridge interface](http://www.wikiwand.com/en/Bridging_%28networking%29 "")
  - Sets up an [IP address](http://www.wikiwand.com/en/IP_address "An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.")
- - Executes a process that you specify (``` /bin/bash ```)
+ - Executes a process that you specify (``` ls ```)
  - Captures and provides application output
 
 ---
@@ -227,8 +227,9 @@ docker version
 docker network ls
 
 // Images
-docker images // docker [IMAGE_NAME]
-docker pull [IMAGE] // docker push [IMAGE]
+docker images
+docker pull [IMAGE]
+docker push [IMAGE]
 
 // Containers
 docker run
@@ -312,36 +313,19 @@ echo "It works using mount." >> index.html
 
 ### Example: Docker link containers
 
-Let's create a [Drupal app](http://hub.docker.com/_/drupal/) (apache, php, mysql, drupal)
+Let's create a FLask app
 
 ```
-cd ~/Docker-presentation
-mkdir drupal-link-example
-cd drupal-link-example
+docker run --name redis -d redis:alpine
+docker run -d --name flask \
+	p 5000:5000 \
+	--link redis:redis \
+	npython-flask
 
-docker pull drupal:8.0.6-apache
-docker pull mysql:5.5
-
-// Start a container for mysql
-docker run --name mysql_example \
-           -e MYSQL_ROOT_PASSWORD=root \
-           -e MYSQL_DATABASE=drupal \
-           -e MYSQL_USER=drupal \
-           -e MYSQL_PASSWORD=drupal \
-           -d mysql:5.5
-
-// Start a Drupal container and link it with mysql
-// Usage: --link [name or id]:alias
-docker run -d --name drupal_example \
-           -p 8280:80 \
-           --link mysql_example:mysql \
-           drupal:8.0.6-apache
-
-// Open http://localhost:8280 to continue with the installation
-// On the db host use: mysql
+// Open http://localhost:5000
 
 // There is a proper linking
-docker inspect -f "{{ .HostConfig.Links }}" drupal_example
+docker inspect -f "{{ .HostConfig.Links }}" flask
 ```
 
 ---
@@ -351,11 +335,6 @@ docker inspect -f "{{ .HostConfig.Links }}" drupal_example
 Let's create a Drupal app with [docker-compose.yml](http://github.com/cubantech/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml)
 
 ```
-cd ~/Docker-presentation
-git clone git@github.com:cubantech/docker-presentation.git
-cd docker-presentation/examples/docker-compose
-
-// Run docker-compose using the docker-compose.yml
 cat docker-compose.yml
 docker-compose up -d
 ```
@@ -365,22 +344,10 @@ docker-compose up -d
 ### Example: Share a public Image
 
 ```
-cd ~/Docker-presentation
-git clone git@github.com:theodorosploumis/docker-presentation.git
-cd docker-presentation
-
-docker pull nimmis/alpine-apache
-docker build -t tplcom/docker-presentation .
-
-// Test it
-docker run -itd --name docker_presentation \
-           -p 8480:80 \
-           tplcom/docker-presentation
-
-// Open http://localhost:8480, you should see this presentation
+docker build wic/myimage .
 
 // Push it on the hub.docker.com
-docker push tplcom/docker-presentation
+docker push wic/myimage
 ```
 
 ---
@@ -388,40 +355,33 @@ docker push tplcom/docker-presentation
 ### Example: Export/Save/Load etc
 
 ```
-docker pull nimmis/alpine-apache
-docker run -d --name apache_example \
-           nimmis/alpine-apache
+docker run -d -p 8080:8000 --name python_server \
+	python:3.7-alpine python3 -m http.server
 
 // Create a file inside the container.
-// See http://github.com/nimmis/docker-alpine-apache for details.
-docker exec -ti apache_example \
-            /bin/sh -c 'mkdir /test && echo "This is it." >> /test/test.txt'
+docker exec -it python_server \
+	/bin/sh -c 'mkdir /test && echo "This is it." >> /test/test.txt'
 
 // Test it. You should see message: "This is it."
-docker exec apache_example cat /test/test.txt
+docker exec python_server cat /test/test.txt
 
 // Commit the change.
-docker commit apache_export_example myapache:latest
+docker commit python_server python_server
 
 // Create a new container with the new image.
-docker run -d --name myapache_example myapache
-
-// You should see the new folder/file inside the myapache_example container.
-docker exec myapache_example cat /test/test.txt
+docker run -p 8081:8000 -it --rm python_server
 
 // Export the container as image
-cd ~/Docker-presentation
-docker export myapache_example > myapache_example.tar
+docker export python_server > python_server.tar
 
 // Import a new image from the exported files
-cd ~/Docker-presentation
-docker import myapache_example.tar myapache:new
+docker import python_server.tar python_server:new
 
 // Save a new image as tar
-docker save -o ~/Docker-presentation/myapache_image.tar myapache:new
+docker save -o ~/python_server.tar python_server:new
 
 // Load an image from tar file
-docker load < myapache_image.tar
+docker load < python_server.tar
 
 ```
 
