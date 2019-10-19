@@ -102,13 +102,6 @@ ________________________
 
 ---
 
-### The Docker architecture
-
-![Docker architecture](img/architecture.svg)
-###### See more at [Understanding docker](http://docs.docker.com/engine/understanding-docker/)
-
----
-
 ### Docker components
 
  - (Docker) client
@@ -175,6 +168,14 @@ hosts and exposes them as a single virtual Docker host. It scale up to multiple 
 ![Docker distribution logo](img/docker_distribution.png)
 
 A (hosted) service containing repositories of images which responds to the Registry API.
+
+---
+
+### The Docker architecture
+
+![Docker architecture](img/architecture.svg)
+###### See more at [Understanding docker](http://docs.docker.com/engine/understanding-docker/)
+
 
 ---
 
@@ -285,6 +286,19 @@ docker run -d -p 8099:8080 --name jenkins_example jenkins-local
 
 ---
 
+Our local example
+
+```bash
+cd ~/docker-example
+docker build -t example .
+
+// Test it
+docker run --rm -d -p 8000:8000 --name example example
+// Open http://localhost:8000
+```
+
+---
+
 ### Example: Docker volume
 
 Let's use [Apache server](http://bitbucket.org/EdBoraas/apache-docker/src/)
@@ -299,6 +313,23 @@ docker run --name apache_volume_example \
            -p 8180:80 -p 443:443 \
            -v $(pwd):/var/www/ \
            -d eboraas/apache
+
+// Locally create an index.html file
+mkdir html
+cd html
+echo "It works using mount." >> index.html
+
+// Open http://localhost:8180 to view the html file
+```
+
+---
+
+```
+mkdir html
+
+docker run --name example \
+           -p 8180:8000 \
+           -v $(pwd)/html:/code \
 
 // Locally create an index.html file
 mkdir html
@@ -422,51 +453,6 @@ docker save -o ~/Docker-presentation/myapache_image.tar myapache:new
 
 // Load an image from tar file
 docker load < myapache_image.tar
-
-```
-
----
-
-### Example: GUI with Docker
-
-See examples at [hub.docker.com/u/jess](http://hub.docker.com/u/jess/)
-
-```
-// Before staring we should grant access to everyone on the X Server (locally)
-// Otherwise the containers below will never start and they will not be able to use x11
-xhost +
-
-// Libreoffice
-docker run  -d \
-            -v /etc/localtime:/etc/localtime:ro \
-            -v /tmp/.X11-unix:/tmp/.X11-unix \
-            -e DISPLAY=unix$DISPLAY \
-            -e GDK_SCALE \
-            -e GDK_DPI_SCALE \
-            --name libreoffice \
-            jess/libreoffice
-
-// SublimeText 3
-docker run -it \
-           -v $HOME/.config/sublime-text-3/:/root/.config/sublime-text-3 \
-           -v /tmp/.X11-unix:/tmp/.X11-unix \
-           -e DISPLAY=$DISPLAY \
-           --name sublime_text \
-           jess/sublime-text-3
-
-// Audacity (sound in docker container)
-docker run  -d \
-            -v /etc/localtime:/etc/localtime:ro \
-            -v /tmp/.X11-unix:/tmp/.X11-unix \
-            -e DISPLAY=unix$DISPLAY \
-            -e QT_DEVICE_PIXEL_RATIO \
-            --device /dev/snd \
-            --group-add audio \
-            --name audacity \
-            jess/audacity
-
-// Disable access to x11
-xhost -
 
 ```
 
